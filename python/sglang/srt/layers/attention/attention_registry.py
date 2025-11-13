@@ -196,10 +196,10 @@ def attn_backend_wrapper(runner: "ModelRunner", full_attn_backend: "AttentionBac
 
         check_environments()
         if runner.hybrid_gdn_config is not None:
-            if is_blackwell():
-                assert (
-                    runner.server_args.attention_backend == "triton"
-                ), "triton backend is the only supported backend on Blackwell GPUs for hybrid GDN models, use --attention-backend triton to specify the backend."
+            # if is_blackwell():
+            #     assert (
+            #         runner.server_args.attention_backend == "triton"
+            #     ), "triton backend is the only supported backend on Blackwell GPUs for hybrid GDN models, use --attention-backend triton to specify the backend."
             if is_npu():
                 assert (
                     runner.server_args.attention_backend == "ascend"
